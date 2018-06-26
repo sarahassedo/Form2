@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>A More Complex Form with JavaScript Validation</title>
+        <link rel="stylesheet" href="Form2.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+
+
+  $(function() {
+var arr = [];
+for (var i = 0; i<100; i++) {
+	arr[i] = String(i);
+}
+    $( "#age" ).autocomplete({
+      source: arr
+    });
+  } );
+  </script>
+
+</head>
+
+
+
+<body>
+<form name="contact_form" method="post" action="/cgi-bin/articles/development/javascript/form-validation-with-javascript/contact_complex.cgi">
+
+<h1>Please Enter Your Details Below</h1>
+
+<p>Your Name: 
+	<input type="text" name="contact_name" value required="contact"></p>
+	  <p>Username must be  and contain 2 - 14 characters</p>
+            <span id="contactNameError"></span>
+<p>Your Gender: 
+	<input type="radio" name="gender" value required="Male"> Male
+	<input type="radio" name="gender" value required="Female"> Female</p>
+<!-- <p>Your Age: <select name="age" required> -->
+	<div>
+	<label for="age">Your Age</label>
+	<input id="age" value required="age">
+</div>
+<!-- <option value="">Please Select an Option:</option>
+<option value="0-18 years">0-18 years</option>
+<option value="18-30 years">18-30 years</option>
+<option value="30-45 years">30-45 years</option>
+<option value="45-60 years">45-60 years</option>
+<option value="60+ years">60+ years</option></select> -->
+<p>Do you agree to the Terms and Conditions?
+<input type="checkbox" name="terms" value required="Yes"> Yes
+<p>
+	<input type="submit" name="send" id= "send" value="Send Details"></p>
+</form>
+
+	<script type="text/javascript" src="Form2.js"></script>
+	
+</script>
+</body>
+</html>
